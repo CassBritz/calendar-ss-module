@@ -34,6 +34,11 @@ class CalendarPage extends Page {
 }
 
 class CalendarPage_Controller extends Page_Controller {
+	private static $allowed_actions = array(
+		"feed",
+		"ajax",
+		"event"
+	);
 	function init() {
 		$sc = SiteConfig::current_site_config();
 		if($sc->UseGCal) {
